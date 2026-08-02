@@ -19,17 +19,19 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Clone Miki migration branch
+      - id: clone
+        name: Clone Miki migration branch
+        continue-on-error: true
         run: |
           rm -rf /tmp/miki-migration
           git clone --depth=1 --branch codex/migrate-public-resources https://github.com/mirrorlious/miki-.git /tmp/miki-migration
 
-      - name: Set up Node.js
+      - id: setup
+        name: Set up Node.js
+        continue-on-error: true
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: /tmp/miki-migration/web/package-lock.json
 
       - id: install
         name: Install dependencies
@@ -64,6 +66,8 @@ jobs:
       - name: Commit verification result
         if: always()
         env:
+          CLONE_RESULT: ${{ steps.clone.outcome }}
+          SETUP_RESULT: ${{ steps.setup.outcome }}
           INSTALL_RESULT: ${{ steps.install.outcome }}
           TEST_RESULT: ${{ steps.test.outcome }}
           LINT_RESULT: ${{ steps.lint.outcome }}
@@ -71,10 +75,12 @@ jobs:
           DIFF_RESULT: ${{ steps.diff_check.outcome }}
         run: |
           set -euo pipefail
-          VERIFIED_SHA="$(git -C /tmp/miki-migration rev-parse HEAD)"
+          VERIFIED_SHA="$(git -C /tmp/miki-migration rev-parse HEAD 2>/dev/null || printf unavailable)"
           cat > MIKI_MIGRATION_VERIFICATION.json <<EOF
           {
             "verifiedSha": "${VERIFIED_SHA}",
+            "clone": "${CLONE_RESULT}",
+            "setup": "${SETUP_RESULT}",
             "install": "${INSTALL_RESULT}",
             "test": "${TEST_RESULT}",
             "lint": "${LINT_RESULT}",
@@ -93,12 +99,16 @@ jobs:
       - name: Fail when verification failed
         if: always()
         env:
+          CLONE_RESULT: ${{ steps.clone.outcome }}
+          SETUP_RESULT: ${{ steps.setup.outcome }}
           INSTALL_RESULT: ${{ steps.install.outcome }}
           TEST_RESULT: ${{ steps.test.outcome }}
           LINT_RESULT: ${{ steps.lint.outcome }}
           BUILD_RESULT: ${{ steps.build.outcome }}
           DIFF_RESULT: ${{ steps.diff_check.outcome }}
         run: |
+          test "${CLONE_RESULT}" = success
+          test "${SETUP_RESULT}" = success
           test "${INSTALL_RESULT}" = success
           test "${TEST_RESULT}" = success
           test "${LINT_RESULT}" = success
