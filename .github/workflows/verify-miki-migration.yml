@@ -1,0 +1,106 @@
+name: Verify Miki migration branch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .verify-miki-migration-trigger
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out verification repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Clone Miki migration branch
+        run: |
+          rm -rf /tmp/miki-migration
+          git clone --depth=1 --branch codex/migrate-public-resources https://github.com/mirrorlious/miki-.git /tmp/miki-migration
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: /tmp/miki-migration/web/package-lock.json
+
+      - id: install
+        name: Install dependencies
+        continue-on-error: true
+        working-directory: /tmp/miki-migration/web
+        run: npm ci
+
+      - id: test
+        name: Run tests
+        continue-on-error: true
+        working-directory: /tmp/miki-migration/web
+        run: npm test
+
+      - id: lint
+        name: Run lint
+        continue-on-error: true
+        working-directory: /tmp/miki-migration/web
+        run: npm run lint
+
+      - id: build
+        name: Build production bundle
+        continue-on-error: true
+        working-directory: /tmp/miki-migration/web
+        run: npm run build
+
+      - id: diff_check
+        name: Check committed diff
+        continue-on-error: true
+        working-directory: /tmp/miki-migration
+        run: git diff --check HEAD^
+
+      - name: Commit verification result
+        if: always()
+        env:
+          INSTALL_RESULT: ${{ steps.install.outcome }}
+          TEST_RESULT: ${{ steps.test.outcome }}
+          LINT_RESULT: ${{ steps.lint.outcome }}
+          BUILD_RESULT: ${{ steps.build.outcome }}
+          DIFF_RESULT: ${{ steps.diff_check.outcome }}
+        run: |
+          set -euo pipefail
+          VERIFIED_SHA="$(git -C /tmp/miki-migration rev-parse HEAD)"
+          cat > MIKI_MIGRATION_VERIFICATION.json <<EOF
+          {
+            "verifiedSha": "${VERIFIED_SHA}",
+            "install": "${INSTALL_RESULT}",
+            "test": "${TEST_RESULT}",
+            "lint": "${LINT_RESULT}",
+            "build": "${BUILD_RESULT}",
+            "diffCheck": "${DIFF_RESULT}"
+          }
+          EOF
+          rm -f .verify-miki-migration-trigger
+          rm -f .github/workflows/verify-miki-migration.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "test: record Miki migration verification"
+          git push origin HEAD:main
+
+      - name: Fail when verification failed
+        if: always()
+        env:
+          INSTALL_RESULT: ${{ steps.install.outcome }}
+          TEST_RESULT: ${{ steps.test.outcome }}
+          LINT_RESULT: ${{ steps.lint.outcome }}
+          BUILD_RESULT: ${{ steps.build.outcome }}
+          DIFF_RESULT: ${{ steps.diff_check.outcome }}
+        run: |
+          test "${INSTALL_RESULT}" = success
+          test "${TEST_RESULT}" = success
+          test "${LINT_RESULT}" = success
+          test "${BUILD_RESULT}" = success
+          test "${DIFF_RESULT}" = success
