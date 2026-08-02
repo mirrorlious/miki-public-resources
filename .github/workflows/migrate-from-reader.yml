@@ -1,6 +1,7 @@
 name: Migrate Miki public resources
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -32,6 +33,7 @@ jobs:
           import hashlib
           import json
           import shutil
+          import subprocess
           from pathlib import Path
 
           source = Path('/tmp/miki-reader-source')
@@ -78,10 +80,6 @@ jobs:
 
           manifest_path = target_resources / 'manifest.json'
           catalog = json.loads(manifest_path.read_text(encoding='utf-8'))
-          old_repo_tokens = (
-              'raw.githubusercontent.com/mirrorlious/-/',
-              'cdn.jsdelivr.net/gh/mirrorlious/-@',
-          )
           serialized = json.dumps(catalog, ensure_ascii=False, indent=2)
           serialized = serialized.replace(
               'https://cdn.jsdelivr.net/gh/mirrorlious/-@main/public-resources/',
@@ -91,6 +89,11 @@ jobs:
               'https://raw.githubusercontent.com/mirrorlious/miki-public-resources/main/public-resources/',
           )
           manifest_path.write_text(serialized + '\n', encoding='utf-8')
+
+          old_repo_tokens = (
+              'raw.githubusercontent.com/mirrorlious/-/',
+              'cdn.jsdelivr.net/gh/mirrorlious/-@',
+          )
 
           def require_file(path: Path, label: str) -> None:
               if not path.is_file():
@@ -155,11 +158,14 @@ jobs:
               digest = hashlib.sha256(path.read_bytes()).hexdigest()
               digest_rows.append((path.relative_to(target).as_posix(), path.stat().st_size, digest))
 
-          source_commit = (source / '.git/refs/heads/main').read_text(encoding='utf-8').strip()
+          source_commit = subprocess.check_output(
+              ['git', '-C', str(source), 'rev-parse', 'HEAD'],
+              text=True,
+          ).strip()
           audit_lines = [
               '# Miki public-resource migration audit',
               '',
-              f'- Source repository: `mirrorlious/-`',
+              '- Source repository: `mirrorlious/-`',
               f'- Source commit: `{source_commit}`',
               f'- Resource files copied: **{len(all_resource_files)}**',
               f'- Support files copied: **{len(copied_support_files)}**',
