@@ -4,14 +4,14 @@
 - Source commit: `c3a40ffb4833b4696ae0ce689967494a26d64cff`
 - Target repository: `mirrorlious/miki-public-resources`
 - Public catalog entries: **8**
-- Resource files copied: **64**
-- Support files copied: **5**
+- Resource files retained: **62**
+- Support files retained: **4**
 - Referenced files validated: **30**
 - Excluded private/fallback pack: `dyl-exam-public-backup`
+- Removed after ownership audit: reader-only `public-resources/ielts-vocabulary/` and `scripts/build-cloudbase-v2.cjs`
 
 ## Copied support files
 
-- `scripts/build-cloudbase-v2.cjs`
 - `scripts/build-politics-pack.py`
 - `scripts/generate_kaoyan_english_vocabulary.py`
 - `tools/build_jlpt_eggrolls_pack.py`
@@ -21,8 +21,6 @@
 
 | File | Bytes | SHA-256 |
 |---|---:|---|
-| `public-resources/ielts-vocabulary/README.md` | 722 | `9f5926acf9de1b350bf703ba177d9a27e8b3a15d79a7504c5c7876a52bb7597c` |
-| `public-resources/ielts-vocabulary/ielts-vocabulary-4-level.json` | 600259 | `9f15c65311f2453df0a64c79f4a7e48f0257895dc9612482c501f91ffaf63ebb` |
 | `public-resources/jlpt-eggrolls/ATTRIBUTION.md` | 549 | `006cd032b6987a00ece4b71abd9a0aba64e6781c1b15c7ae4b904b7bbc46f52e` |
 | `public-resources/jlpt-eggrolls/README.md` | 355 | `cfab5889a53a43e0b76a4029f6b58bc02a0f292f8b86822378847f81fc944e66` |
 | `public-resources/jlpt-eggrolls/conversion-report.json` | 1161 | `772e5082701505fd870fbc2971f18cb8397a90976905939714690d19c64cdef9` |
