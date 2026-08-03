@@ -1,0 +1,68 @@
+name: Build QY civil law public pack
+
+on:
+  push:
+    paths:
+      - .tmp-qy-civil-law-trigger
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download archived APKG
+        run: |
+          curl --fail --location --retry 3 \
+            --output source.apkg \
+            'https://raw.githubusercontent.com/mirrorlious/ankicardsfo1po/main/QY%E6%B0%91%E6%B3%95%E6%B3%95%E7%A1%95Anki%E8%AE%B0%E5%BF%86%E5%8D%A1%E7%89%87.apkg'
+      - name: Build and validate pack
+        run: |
+          python scripts/.tmp-build-qy-civil-law.py
+          python - <<'PY'
+          import base64, gzip, json, re
+          from pathlib import Path
+
+          root = Path('public-resources')
+          pack_dir = root / 'qy-lsat-civil-law'
+          manifest = json.loads((pack_dir / 'manifest.json').read_text(encoding='utf-8'))
+          bundle = json.loads(gzip.decompress(base64.b64decode((pack_dir / 'pack.json.gz.b64').read_text(encoding='ascii'))))
+          cards = bundle['cards']
+          decks = bundle['data']['decks']
+          assert manifest['cardCount'] == len(cards) == 539
+          assert manifest['deckCount'] == len(decks) == 92
+          assert manifest['mapCount'] == 7
+          assert manifest['duplicateCountRemoved'] == 6
+          assert len({card['id'] for card in cards}) == 539
+          assert len({card['sourceKey'] for card in cards}) == 539
+          unsafe = re.compile(r'<script\b|\son[a-z]+\s*=|javascript\s*:', re.I)
+          assert not any(unsafe.search('\n'.join(str(card.get(key, '')) for key in ('frontHtml', 'backHtml', 'cardCss'))) for card in cards)
+          assert not (root / 'dyl-exam-public-backup').exists()
+
+          catalog_path = root / 'manifest.json'
+          catalog = json.loads(catalog_path.read_text(encoding='utf-8'))
+          entry = {key: manifest[key] for key in ('id', 'packId', 'title', 'description', 'subject', 'type', 'version', 'cardCount', 'deckCount', 'noteCount', 'mapCount', 'license', 'author')}
+          entry['manifestUrl'] = 'qy-lsat-civil-law/manifest.json'
+          packs = [item for item in catalog.get('packs', []) if item.get('packId', item.get('id')) != manifest['packId']]
+          packs.append(entry)
+          catalog['updatedAt'] = '2026-08-03'
+          catalog['packs'] = packs
+          catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          assert len(catalog['packs']) == 9
+          assert all(item.get('packId', item.get('id')) != 'dyl-exam-public-backup' for item in catalog['packs'])
+          print(json.dumps({'cards': len(cards), 'decks': len(decks), 'maps': manifest['mapCount'], 'catalogPacks': len(packs)}, ensure_ascii=False))
+          PY
+          git diff --check
+      - name: Commit generated resources
+        run: |
+          rm -rf source.apkg extract .tmp-qy-civil-law-trigger
+          rm -f scripts/.tmp-build-qy-civil-law.py .github/workflows/.tmp-build-qy-civil-law.yml .github/workflows/qy-civil-law-one-shot.yml
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add public-resources scripts/.tmp-build-qy-civil-law.py .github/workflows/.tmp-build-qy-civil-law.yml .github/workflows/qy-civil-law-one-shot.yml .tmp-qy-civil-law-trigger
+          git commit -m 'data: add QY civil law Anki public pack'
+          git push origin HEAD:main
