@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "qy-lsat-civil-law",
+  "packId": "qy-lsat-civil-law",
+  "title": "QY 民法法硕 Anki 记忆卡片",
+  "description": "面向 2027 法硕备考，按民法六编整理的问答、填空与知识导图记忆卡片。",
+  "subject": "法硕民法",
+  "type": "cards",
+  "version": "2026.08.03",
+  "cardCount": 539,
+  "deckCount": 92,
+  "noteCount": 539,
+  "mapCount": 7,
+  "duplicateCountRemoved": 6,
+  "license": "仅供个人学习",
+  "author": "QY",
+  "maintainer": "Miki 站点",
+  "files": {
+    "bundleParts": [
+      "pack.part-000.b64",
+      "pack.part-001.b64",
+      "pack.part-002.b64",
+      "pack.part-003.b64",
+      "pack.part-004.b64",
+      "pack.part-005.b64",
+      "pack.part-006.b64",
+      "pack.part-007.b64",
+      "pack.part-008.b64",
+      "pack.part-009.b64",
+      "pack.part-010.b64"
+    ],
+    "knowledgeMap": "knowledge-map.html",
+    "attribution": "ATTRIBUTION.md"
+  },
+  "models": [
+    {"name": "法硕-填空型-墨韵书香", "cardCount": 259},
+    {"name": "法硕-知识导图型-墨韵书香", "cardCount": 7},
+    {"name": "法硕-问答型-墨韵书香", "cardCount": 273}
+  ]
+}
