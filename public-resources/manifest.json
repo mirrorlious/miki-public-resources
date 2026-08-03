@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "title": "Miki 站点资料池",
-  "updatedAt": "2026-07-15",
+  "updatedAt": "2026-08-04",
   "packs": [
     {
       "id": "politics-2027",
@@ -127,6 +127,23 @@
       "usageHint": "安装后可在首页 → 词汇默写中查看。",
       "dataUrl": "kaoyan-english-2027-vocabulary/考研英语红宝书词汇27新版【超纲词】qy自制.json",
       "sourceUrl": "kaoyan-english-2027-vocabulary/考研英语红宝书词汇27新版【超纲词】qy自制.tsx"
+    },
+    {
+      "id": "qy-lsat-civil-law",
+      "packId": "qy-lsat-civil-law",
+      "title": "QY 民法法硕 Anki 记忆卡片",
+      "description": "面向 2027 法硕备考，按民法六编整理的问答、填空与知识导图记忆卡片。",
+      "subject": "法硕民法",
+      "type": "cards",
+      "version": "2026.08.04",
+      "cardCount": 539,
+      "deckCount": 92,
+      "noteCount": 539,
+      "mapCount": 7,
+      "license": "仅供个人学习",
+      "author": "QY",
+      "usageHint": "加入后可在浏览页按民法章节查看，并在学习页背诵。",
+      "manifestUrl": "qy-lsat-civil-law/manifest.json"
     }
   ]
 }
