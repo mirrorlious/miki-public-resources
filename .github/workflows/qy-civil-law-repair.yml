@@ -1,9 +1,10 @@
 name: Repair QY civil law public pack
 
 on:
-  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
     paths:
-      - .tmp-qy-civil-law-repair
+      - .tmp-qy-civil-law-repair-pr
 
 permissions:
   contents: write
@@ -14,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.head_ref }}
           fetch-depth: 0
 
       - name: Download trusted inputs
@@ -106,14 +108,12 @@ jobs:
           PY
           git diff --check
 
-      - name: Commit verified repair and remove one-shot files
+      - name: Commit verified repair to PR branch
         run: |
           rm -rf source.apkg extract
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add -A -- public-resources
-          git rm -f --ignore-unmatch \
-            .tmp-qy-civil-law-repair \
-            .github/workflows/qy-civil-law-repair.yml
+          git rm -f --ignore-unmatch .tmp-qy-civil-law-repair-pr
           git commit -m 'fix: rebuild QY civil law pack as verified single bundle'
-          git push origin HEAD:main
+          git push origin "HEAD:${GITHUB_HEAD_REF}"
