@@ -1,0 +1,58 @@
+{
+  "schema": "apkg-media-index-v1",
+  "sourceMediaEntryCount": 13,
+  "uniqueMediaCount": 7,
+  "duplicateMediaEntryCount": 6,
+  "conflictingMediaCount": 0,
+  "entries": [
+    {
+      "filename": "map_part1.png",
+      "path": "media/map_part1.png",
+      "mediaType": "image/png",
+      "sizeBytes": 878795,
+      "sha256": "69fad75cfe5a1a5811511c6ff8618409d11c24f64d99a35a16f61a94a73cab18"
+    },
+    {
+      "filename": "map_part2.png",
+      "path": "media/map_part2.png",
+      "mediaType": "image/png",
+      "sizeBytes": 309954,
+      "sha256": "db0e1e80e026c8faab9dbeee927fd16c7101a8bdef55bd2984e013ca45a41e22"
+    },
+    {
+      "filename": "map_part3.png",
+      "path": "media/map_part3.png",
+      "mediaType": "image/png",
+      "sizeBytes": 665546,
+      "sha256": "8cf9176d4b117b2de9eac716b63a326d696bc15a0f48253603ff3a6726c15d88"
+    },
+    {
+      "filename": "map_part6.png",
+      "path": "media/map_part6.png",
+      "mediaType": "image/png",
+      "sizeBytes": 553089,
+      "sha256": "1c75ef6a638abf32f02e596f3f4f0e8f7f0111636734f9b9afe80ae3ed95ed29"
+    },
+    {
+      "filename": "map_part4.png",
+      "path": "media/map_part4.png",
+      "mediaType": "image/png",
+      "sizeBytes": 666593,
+      "sha256": "dbdc69fba0c547c1665683b6ea0daf78236a2ccd1df1fc8c09e5daf16e356426"
+    },
+    {
+      "filename": "map_part5.png",
+      "path": "media/map_part5.png",
+      "mediaType": "image/png",
+      "sizeBytes": 688508,
+      "sha256": "07b532f6babfdf5f295482ca33b7d82283795a3fc76177599c267e7e7b84f1ca"
+    },
+    {
+      "filename": "map_overview.png",
+      "path": "media/map_overview.png",
+      "mediaType": "image/png",
+      "sizeBytes": 529142,
+      "sha256": "4bb2a68388211c1626dc3ee12333ee1142de5c987b83ed6da98eb847c5c8fa4a"
+    }
+  ]
+}

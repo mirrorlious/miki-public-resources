@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 2,
+  "packId": "qy-lsat-civil-law",
+  "title": "QY 民法法硕 Anki 记忆卡片",
+  "description": "真实原生 APKG 的未发布 manifest v2 候选。",
+  "version": "2026.08.07.2",
+  "resourceVersion": "qy-6de77921b97ff4a9-8694616",
+  "payload": {
+    "format": "apkg",
+    "entryResourceIds": [
+      "source-apkg"
+    ]
+  },
+  "runtime": {
+    "contentFormat": "anki",
+    "renderEngine": "anki-core-v1",
+    "compatibilityProfile": {
+      "id": "qy-civil-law-v1",
+      "version": 3,
+      "required": true
+    }
+  },
+  "counts": {
+    "sourceCardCount": 545,
+    "finalCardCount": 539,
+    "deckCount": 92,
+    "duplicateCardCountRemoved": 6,
+    "uniqueKnowledgeMapCount": 7
+  },
+  "resources": [
+    {
+      "id": "source-apkg",
+      "role": "apkg",
+      "path": "packages/qy-civil-law-6de77921b97ff4a9.apkg",
+      "mediaType": "application/octet-stream",
+      "sizeBytes": 8694616,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "6de77921b97ff4a9184673c48d718840bb771f4777d99c34a37c63169c13db4e"
+      },
+      "cachePolicy": "immutable"
+    },
+    {
+      "id": "media-index",
+      "role": "media-index",
+      "path": "media/index.json",
+      "mediaType": "application/json",
+      "sizeBytes": 1770,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "37b6c18bcf0150658ed205672fe400db13fbc237c78954ff6315ea3bfef04bce"
+      },
+      "cachePolicy": "immutable"
+    },
+    {
+      "id": "media-1",
+      "role": "media",
+      "path": "media/map_part1.png",
+      "mediaType": "image/png",
+      "sizeBytes": 878795,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "69fad75cfe5a1a5811511c6ff8618409d11c24f64d99a35a16f61a94a73cab18"
+      },
+      "cachePolicy": "immutable"
+    },
+    {
+      "id": "media-2",
+      "role": "media",
+      "path": "media/map_part2.png",
+      "mediaType": "image/png",
+      "sizeBytes": 309954,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "db0e1e80e026c8faab9dbeee927fd16c7101a8bdef55bd2984e013ca45a41e22"
+      },
+      "cachePolicy": "immutable"
+    },
+    {
+      "id": "media-3",
+      "role": "media",
+      "path": "media/map_part3.png",
+      "mediaType": "image/png",
+      "sizeBytes": 665546,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "8cf9176d4b117b2de9eac716b63a326d696bc15a0f48253603ff3a6726c15d88"
+      },
+      "cachePolicy": "immutable"
+    },
+    {
+      "id": "media-4",
+      "role": "media",
+      "path": "media/map_part6.png",
+      "mediaType": "image/png",
+      "sizeBytes": 553089,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "1c75ef6a638abf32f02e596f3f4f0e8f7f0111636734f9b9afe80ae3ed95ed29"
+      },
+      "cachePolicy": "immutable"
+    },
+    {
+      "id": "media-5",
+      "role": "media",
+      "path": "media/map_part4.png",
+      "mediaType": "image/png",
+      "sizeBytes": 666593,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "dbdc69fba0c547c1665683b6ea0daf78236a2ccd1df1fc8c09e5daf16e356426"
+      },
+      "cachePolicy": "immutable"
+    },
+    {
+      "id": "media-6",
+      "role": "media",
+      "path": "media/map_part5.png",
+      "mediaType": "image/png",
+      "sizeBytes": 688508,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "07b532f6babfdf5f295482ca33b7d82283795a3fc76177599c267e7e7b84f1ca"
+      },
+      "cachePolicy": "immutable"
+    },
+    {
+      "id": "media-7",
+      "role": "media",
+      "path": "media/map_overview.png",
+      "mediaType": "image/png",
+      "sizeBytes": 529142,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "4bb2a68388211c1626dc3ee12333ee1142de5c987b83ed6da98eb847c5c8fa4a"
+      },
+      "cachePolicy": "immutable"
+    }
+  ]
+}
