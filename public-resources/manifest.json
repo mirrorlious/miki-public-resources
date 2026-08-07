@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "title": "Miki 站点资料池",
-  "updatedAt": "2026-08-04",
+  "updatedAt": "2026-08-07",
   "packs": [
     {
       "id": "politics-2027",
@@ -135,7 +135,9 @@
       "description": "面向 2027 法硕备考，按民法六编整理的问答、填空与知识导图记忆卡片。",
       "subject": "法硕民法",
       "type": "cards",
-      "version": "2026.08.04.2",
+      "version": "2026.08.07.2",
+      "resourceVersion": "qy-6de77921b97ff4a9-8694616",
+      "manifestSchemaVersion": 2,
       "cardCount": 539,
       "deckCount": 92,
       "noteCount": 539,
@@ -143,7 +145,7 @@
       "license": "仅供个人学习",
       "author": "QY",
       "usageHint": "加入后可在浏览页按民法章节查看，并在学习页背诵。",
-      "manifestUrl": "qy-lsat-civil-law/manifest.json"
+      "manifestUrl": "https://raw.githubusercontent.com/mirrorlious/miki-public-resources/c0489c560499a572357c0a478b12f6235d30b323/public-resources/qy-lsat-civil-law/releases/2026.08.07.2-qy-6de77921b97ff4a9-8694616/manifest.v2.json"
     }
   ]
 }
