@@ -1,0 +1,182 @@
+name: One-time QY v2 catalog cutover
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/one-time-qy-v2-catalog-cutover.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cutover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify miki-cn production contains profile v3 release code
+        shell: bash
+        run: |
+          python - <<'PY'
+          import re
+          import time
+          import urllib.parse
+          import urllib.request
+
+          origin = 'https://miki-cn.pages.dev'
+          needles = [
+              b'2207398801',
+              b'qy-6de77921b97ff4a9-8694616',
+              b'c0489c560499a572357c0a478b12f6235d30b323',
+          ]
+
+          def fetch(url):
+              request = urllib.request.Request(
+                  url,
+                  headers={
+                      'User-Agent': 'Miki-QY-v2-cutover-probe/1.0',
+                      'Cache-Control': 'no-cache',
+                      'Pragma': 'no-cache',
+                  },
+              )
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  return response.read(), response.geturl()
+
+          def collect_assets(html, base_url):
+              refs = set()
+              text = html.decode('utf-8', 'ignore')
+              for match in re.findall(r'''(?:src|href)=["']([^"']+\.js(?:\?[^"']*)?)["']''', text):
+                  refs.add(urllib.parse.urljoin(base_url, match))
+              return refs
+
+          last_summary = None
+          for attempt in range(18):
+              stamp = int(time.time())
+              html, final_url = fetch(f'{origin}/?qy_v2_probe={stamp}')
+              queue = list(collect_assets(html, final_url))
+              seen = set()
+              corpus = bytearray(html)
+              while queue and len(seen) < 80:
+                  url = queue.pop()
+                  if url in seen:
+                      continue
+                  seen.add(url)
+                  try:
+                      payload, resolved = fetch(url)
+                  except Exception:
+                      continue
+                  corpus.extend(payload)
+                  for asset in re.findall(rb'''assets/[A-Za-z0-9_.-]+\.js''', payload):
+                      queue.append(urllib.parse.urljoin(resolved, asset.decode('ascii')))
+              found = {needle.decode(): (needle in corpus) for needle in needles}
+              last_summary = {'attempt': attempt + 1, 'assets': len(seen), 'found': found}
+              print('QY_MIKI_CN_PROBE', last_summary, flush=True)
+              if found['2207398801'] and (found['qy-6de77921b97ff4a9-8694616'] or found['c0489c560499a572357c0a478b12f6235d30b323']):
+                  print('QY_MIKI_CN_PROFILE_V3_READY=true')
+                  break
+              time.sleep(10)
+          else:
+              raise SystemExit(f'miki-cn production did not expose the verified QY v2 runtime after retries: {last_summary}')
+          PY
+
+      - name: Switch shared public catalog to commit-pinned Manifest v2
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('public-resources/manifest.json')
+          payload = json.loads(path.read_text(encoding='utf-8'))
+          packs = payload.get('packs') if isinstance(payload.get('packs'), list) else []
+          qy = next((pack for pack in packs if str(pack.get('packId') or pack.get('id')) == 'qy-lsat-civil-law'), None)
+          if not qy:
+              raise SystemExit('QY catalog entry not found.')
+          qy.update({
+              'version': '2026.08.07.2',
+              'resourceVersion': 'qy-6de77921b97ff4a9-8694616',
+              'manifestSchemaVersion': 2,
+              'cardCount': 539,
+              'deckCount': 92,
+              'noteCount': 539,
+              'mapCount': 7,
+              'manifestUrl': 'https://raw.githubusercontent.com/mirrorlious/miki-public-resources/c0489c560499a572357c0a478b12f6235d30b323/public-resources/qy-lsat-civil-law/releases/2026.08.07.2-qy-6de77921b97ff4a9-8694616/manifest.v2.json',
+          })
+          payload['updatedAt'] = '2026-08-07'
+          path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+
+      - name: Validate catalog no longer exposes mutable QY APKG chain
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          payload = json.loads(Path('public-resources/manifest.json').read_text(encoding='utf-8'))
+          qy = next(pack for pack in payload['packs'] if str(pack.get('packId') or pack.get('id')) == 'qy-lsat-civil-law')
+          url = qy['manifestUrl']
+          assert qy['version'] == '2026.08.07.2'
+          assert qy['resourceVersion'] == 'qy-6de77921b97ff4a9-8694616'
+          assert qy['manifestSchemaVersion'] == 2
+          assert re.search(r'/[0-9a-f]{40}/', url)
+          assert '/main/' not in url and '/master/' not in url
+          assert 'manifest.v2.json' in url
+          print('QY_CATALOG_CUTOVER_VALID=true')
+          PY
+
+      - name: Commit catalog cutover
+        id: catalog_commit
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public-resources/manifest.json
+          git commit -m 'release(qy): activate immutable Manifest v2 catalog'
+          sha="$(git rev-parse HEAD)"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          git push origin HEAD:main
+          echo "QY_CATALOG_COMMIT=$sha"
+
+      - name: Verify catalog from commit-pinned raw GitHub
+        env:
+          CATALOG_SHA: ${{ steps.catalog_commit.outputs.sha }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import time
+          import urllib.request
+
+          sha = os.environ['CATALOG_SHA']
+          url = f'https://raw.githubusercontent.com/mirrorlious/miki-public-resources/{sha}/public-resources/manifest.json'
+          last = None
+          for attempt in range(10):
+              try:
+                  with urllib.request.urlopen(url, timeout=30) as response:
+                      payload = json.loads(response.read().decode('utf-8'))
+                  qy = next(pack for pack in payload['packs'] if str(pack.get('packId') or pack.get('id')) == 'qy-lsat-civil-law')
+                  if qy.get('version') == '2026.08.07.2' and qy.get('resourceVersion') == 'qy-6de77921b97ff4a9-8694616' and 'c0489c560499a572357c0a478b12f6235d30b323' in qy.get('manifestUrl', ''):
+                      print('QY_REMOTE_CATALOG_VERIFIED=true')
+                      break
+                  last = qy
+              except Exception as error:
+                  last = repr(error)
+              time.sleep(2 + attempt)
+          else:
+              raise SystemExit(f'Commit-pinned catalog verification failed: {last}')
+          PY
+
+      - name: Remove one-time cutover workflow
+        shell: bash
+        run: |
+          git pull --ff-only origin main
+          git rm .github/workflows/one-time-qy-v2-catalog-cutover.yml
+          git commit -m 'ci: remove one-time QY v2 catalog cutover'
+          git push origin HEAD:main
