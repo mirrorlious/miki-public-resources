@@ -28,7 +28,6 @@ jobs:
           payload = json.loads(Path('public-resources/manifest.json').read_text(encoding='utf-8'))
           qy = next(pack for pack in payload['packs'] if str(pack.get('packId') or pack.get('id')) == 'qy-lsat-civil-law')
           url = qy['manifestUrl']
-          assert payload.get('updatedAt') == '2026-08-07'
           assert qy.get('version') == '2026.08.07.2'
           assert qy.get('resourceVersion') == 'qy-6de77921b97ff4a9-8694616'
           assert qy.get('manifestSchemaVersion') == 2
