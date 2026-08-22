@@ -9,8 +9,10 @@ import html
 import shutil
 import sys
 
+from politics_pack_contract import POLITICS_PACK_VERSION, POLITICS_STATIC_STYLESHEET
+
 PACK_ID = 'politics-2027'
-VERSION = '2026.07.10.2'
+VERSION = POLITICS_PACK_VERSION
 SUBJECTS = {
     '马原': '马克思主义基本原理',
     '史纲': '中国近代史纲要',
@@ -399,7 +401,11 @@ def build(source_root, output_root):
             note_count += 1
             subject_counts[subject] += 1 + section_count + table_row_count
 
-    bundle = {'data': {'decks': decks}, 'cards': cards}
+    bundle = {
+        'data': {'decks': decks},
+        'cards': cards,
+        'cardCss': POLITICS_STATIC_STYLESHEET,
+    }
     raw_bundle = json.dumps(bundle, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
     encoded_bundle = base64.b64encode(gzip.compress(raw_bundle, compresslevel=9, mtime=0)).decode('ascii')
     (output_root / 'pack.json.gz.b64').write_text(encoded_bundle, encoding='ascii')
