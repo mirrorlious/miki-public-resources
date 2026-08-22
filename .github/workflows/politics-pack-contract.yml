@@ -1,0 +1,36 @@
+name: politics-pack-contract
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/politics-pack-contract.yml'
+      - 'scripts/build-politics-pack.py'
+      - 'scripts/politics_pack_contract.py'
+      - 'scripts/release-politics-stylesheet.py'
+      - 'public-resources/manifest.json'
+      - 'public-resources/politics-2027/**'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/politics-pack-contract.yml'
+      - 'scripts/build-politics-pack.py'
+      - 'scripts/politics_pack_contract.py'
+      - 'scripts/release-politics-stylesheet.py'
+      - 'public-resources/manifest.json'
+      - 'public-resources/politics-2027/**'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify immutable politics stylesheet release
+        run: python scripts/release-politics-stylesheet.py --verify
+      - name: Verify future publisher output
+        run: python scripts/test-politics-pack-contract.py

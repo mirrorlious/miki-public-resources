@@ -1,0 +1,19 @@
+{
+  "packId": "politics-2027",
+  "releaseVersion": "2026.08.22.1",
+  "sourceRepositoryCommit": "48dd325cb46bacee54ed25c358f3d8e31b14680a",
+  "transformation": "add bundle-level safe static cardCss; preserve cards byte-for-byte after JSON decode",
+  "input": {
+    "version": "2026.07.10.2",
+    "bundleSizeBytes": 561976,
+    "bundleSha256": "e0085641b637bd159b57a28f5456c780e6d5316c9dad58195acf4e20d848adc8",
+    "cardPayloadSha256": "9bb96b9d23f2c935b9cb7a7d4a3e2888a946c4c4d68dcd91a06ee684d1b400aa"
+  },
+  "output": {
+    "bundleSizeBytes": 562920,
+    "bundleSha256": "12f1bd6a1bec9ac7625db6b4ff7ad14f28d867e83d7dd26cf76bda0e5da7c7ae",
+    "cardPayloadSha256": "9bb96b9d23f2c935b9cb7a7d4a3e2888a946c4c4d68dcd91a06ee684d1b400aa",
+    "stylesheetSha256": "dcbe21926c4c03aeeb33dc60be7e6183287c8813fd0bacd5ed37df6f79ba26ea"
+  },
+  "rollbackManifestUrl": "https://raw.githubusercontent.com/mirrorlious/miki-public-resources/48dd325cb46bacee54ed25c358f3d8e31b14680a/public-resources/politics-2027/manifest.json"
+}

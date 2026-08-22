@@ -6,7 +6,7 @@
   "description": "由公开 Obsidian 政治笔记整理的五科考点卡组，保留重点、高频、论述题与易混淆标签。",
   "subject": "考研政治",
   "type": "cards",
-  "version": "2026.07.10.2",
+  "version": "2026.08.22.1",
   "cardCount": 1513,
   "deckCount": 5,
   "noteCount": 568,
@@ -14,7 +14,7 @@
   "author": "XColorful",
   "maintainer": "Miki 站点",
   "files": {
-    "bundle": "pack.json.gz.b64",
+    "bundle": "releases/2026.08.22.1/pack.json.gz.b64",
     "attribution": "ATTRIBUTION.md"
   },
   "subjects": [
@@ -43,5 +43,12 @@
       "title": "思想道德与法治",
       "cardCount": 202
     }
-  ]
+  ],
+  "release": {
+    "immutable": true,
+    "inputVersion": "2026.07.10.2",
+    "inputBundleSha256": "e0085641b637bd159b57a28f5456c780e6d5316c9dad58195acf4e20d848adc8",
+    "cardPayloadSha256": "9bb96b9d23f2c935b9cb7a7d4a3e2888a946c4c4d68dcd91a06ee684d1b400aa",
+    "stylesheetSha256": "dcbe21926c4c03aeeb33dc60be7e6183287c8813fd0bacd5ed37df6f79ba26ea"
+  }
 }
