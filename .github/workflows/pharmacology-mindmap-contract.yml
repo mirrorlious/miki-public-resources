@@ -1,0 +1,28 @@
+name: Pharmacology mindmap contract
+
+on:
+  pull_request:
+    paths:
+      - 'public-resources/manifest.json'
+      - 'public-resources/pharmacology/**'
+      - 'tools/build_pharmacology_pack.py'
+      - 'tools/verify_pharmacology_mindmap_pack.py'
+      - '.github/workflows/pharmacology-mindmap-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'public-resources/manifest.json'
+      - 'public-resources/pharmacology/**'
+      - 'tools/build_pharmacology_pack.py'
+      - 'tools/verify_pharmacology_mindmap_pack.py'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python tools/verify_pharmacology_mindmap_pack.py

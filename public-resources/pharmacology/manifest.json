@@ -3,24 +3,169 @@
   "id": "pharmacology-xmind-anki",
   "packId": "pharmacology-xmind-anki",
   "title": "药理学思维导图与药物卡片",
-  "description": "由药理学 XMind 思维导图与 Anki 药物卡片转换，支持在 Browse 与 Study 中按章节阅读和复习。",
+  "description": "由药理学 XMind 思维导图与 Anki 药物卡片转换；保留结构化节点、连线、缩放和平移，并支持节点跳转真实卡片。",
   "subject": "药理学",
   "type": "cards",
-  "version": "2026.07.13.1",
+  "version": "2026.08.22.1",
   "cardCount": 257,
   "deckCount": 8,
   "license": "按原项目许可（已确认允许再分发）",
   "author": "nanguaguag",
   "maintainer": "Miki 站点",
   "sourceUrl": "https://github.com/nanguaguag/pharmacology",
+  "sourceCommit": "af8d5fe844ff5e6d141e431db6bec2e26e8e0f5e",
+  "sourceSha256": "9a8e541253df6901caf9088117de545745549ea4a58290f440ca41fe22238edd",
+  "sourceSizeBytes": 4053982,
+  "immutable": false,
   "files": {
     "bundleParts": [
-      "pack.part-000.b64",
-      "pack.part-001.b64",
-      "pack.part-002.b64",
-      "pack.part-003.b64"
+      "releases/2026.08.22.1/pack.part-000.b64",
+      "releases/2026.08.22.1/pack.part-001.b64",
+      "releases/2026.08.22.1/pack.part-002.b64",
+      "releases/2026.08.22.1/pack.part-003.b64",
+      "releases/2026.08.22.1/pack.part-004.b64",
+      "releases/2026.08.22.1/pack.part-005.b64",
+      "releases/2026.08.22.1/pack.part-006.b64",
+      "releases/2026.08.22.1/pack.part-007.b64",
+      "releases/2026.08.22.1/pack.part-008.b64",
+      "releases/2026.08.22.1/pack.part-009.b64"
     ],
-    "attribution": "ATTRIBUTION.md"
+    "mediaBase": "releases/2026.08.22.1/media/",
+    "attribution": "releases/2026.08.22.1/ATTRIBUTION.md"
+  },
+  "integrity": {
+    "pack.part-000.b64": {
+      "sha256": "a726c575db0cd425260d02b8a6fbba80650a30a0eedc1b6e8acd024adb8dcfa7",
+      "sizeBytes": 70000
+    },
+    "pack.part-001.b64": {
+      "sha256": "ab69c2e406a3d0f37b4592247c997e2b2632530eb72d56c0b05c8308c39df1c7",
+      "sizeBytes": 70000
+    },
+    "pack.part-002.b64": {
+      "sha256": "c15c2da3896a1714bc09129e003995b134c255b58413f130def87774278501d2",
+      "sizeBytes": 70000
+    },
+    "pack.part-003.b64": {
+      "sha256": "95d308e5e8b893d0752104abaaad9a54910b349a3fd8aa459bf051c8541f7c2c",
+      "sizeBytes": 70000
+    },
+    "pack.part-004.b64": {
+      "sha256": "37105bc50b05f348cc680e3ab68a2a4b792a0405634c81f36e731b3f7772b6f1",
+      "sizeBytes": 70000
+    },
+    "pack.part-005.b64": {
+      "sha256": "76ab3ee9c716601437aec60f9eb32e3fd07f8dd3e18a86a1cc8fa05d9076760d",
+      "sizeBytes": 70000
+    },
+    "pack.part-006.b64": {
+      "sha256": "8eeba2191caeef951893afaa55f831bd46a5a72b8c8ad89e3ce11cb9ada0c44e",
+      "sizeBytes": 70000
+    },
+    "pack.part-007.b64": {
+      "sha256": "9a0b9428a7903317f328483f4216b7d5e28964e304a97c6242a1d97e715db665",
+      "sizeBytes": 70000
+    },
+    "pack.part-008.b64": {
+      "sha256": "562cbdab9a5857c3fd6644d79e47d31d56102df07053aa50e569ba6eb1eb585c",
+      "sizeBytes": 70000
+    },
+    "pack.part-009.b64": {
+      "sha256": "590c4fceda53db3d1deab00e4edcbe7ad463de25ce4709a9a3ab928d7ecec606",
+      "sizeBytes": 51664
+    },
+    "media/0577c7123aa96d7d534993ba9a2218795d32d58a78e9b9c91632e47c73fecbd3.png": {
+      "sha256": "0577c7123aa96d7d534993ba9a2218795d32d58a78e9b9c91632e47c73fecbd3",
+      "sizeBytes": 141783
+    },
+    "media/057caf72529236ceac47e6a09dc0685d219a0b87b4de3a2148bb591486122b62.png": {
+      "sha256": "057caf72529236ceac47e6a09dc0685d219a0b87b4de3a2148bb591486122b62",
+      "sizeBytes": 27344
+    },
+    "media/3ac251efc8c91881532b2b8d15ea915e970b72f894035f3705f25ae1b6724dbf.png": {
+      "sha256": "3ac251efc8c91881532b2b8d15ea915e970b72f894035f3705f25ae1b6724dbf",
+      "sizeBytes": 224913
+    },
+    "media/4219c22c1cda1ac4dbe31fb9c20a4f6f90d27f9d2778f787b45048792afb186a.png": {
+      "sha256": "4219c22c1cda1ac4dbe31fb9c20a4f6f90d27f9d2778f787b45048792afb186a",
+      "sizeBytes": 13857
+    },
+    "media/547d349fae79c17b1e1a3130dd7348af87410efa57cf8e15e4313ef41409ae49.png": {
+      "sha256": "547d349fae79c17b1e1a3130dd7348af87410efa57cf8e15e4313ef41409ae49",
+      "sizeBytes": 24760
+    },
+    "media/63903601ed36f5b2e60d85f47ce6bfc4370ea4d0744c20d088c06e7d1fb936a8.png": {
+      "sha256": "63903601ed36f5b2e60d85f47ce6bfc4370ea4d0744c20d088c06e7d1fb936a8",
+      "sizeBytes": 2802
+    },
+    "media/67c9e5b69ae6396b43acaad525c689b177cd35a9b488934ddc35684565201871.png": {
+      "sha256": "67c9e5b69ae6396b43acaad525c689b177cd35a9b488934ddc35684565201871",
+      "sizeBytes": 20824
+    },
+    "media/79c68088b28a0c2d9169e505426085c91486b0ab55522ab17a4d80664d3d9459.png": {
+      "sha256": "79c68088b28a0c2d9169e505426085c91486b0ab55522ab17a4d80664d3d9459",
+      "sizeBytes": 6672
+    },
+    "media/7b87d74663b4bc4567bf84965240d09040a851414bf7d7180876636928e07df1.png": {
+      "sha256": "7b87d74663b4bc4567bf84965240d09040a851414bf7d7180876636928e07df1",
+      "sizeBytes": 20852
+    },
+    "media/7dfa2a78c3db72e3e8f4e6eef4aa0872e9b8c3210afeb7c3ce7cef909a7d712b.png": {
+      "sha256": "7dfa2a78c3db72e3e8f4e6eef4aa0872e9b8c3210afeb7c3ce7cef909a7d712b",
+      "sizeBytes": 9350
+    },
+    "media/7f84c1ad1fbe8f6ce4d90b901b298f8cbb20d703cff8037c4a50cc3876ff9351.png": {
+      "sha256": "7f84c1ad1fbe8f6ce4d90b901b298f8cbb20d703cff8037c4a50cc3876ff9351",
+      "sizeBytes": 414499
+    },
+    "media/9d33f0a59eb6473a919ea9609d91b0655815bfb67671c7a590c9037f92fcb07a.png": {
+      "sha256": "9d33f0a59eb6473a919ea9609d91b0655815bfb67671c7a590c9037f92fcb07a",
+      "sizeBytes": 2914
+    },
+    "media/a21f5e83746f3f6d083eeba0e459277099b784f6af214d9f029727518d757f41.png": {
+      "sha256": "a21f5e83746f3f6d083eeba0e459277099b784f6af214d9f029727518d757f41",
+      "sizeBytes": 158389
+    },
+    "media/bc068c396f0b344e7bb9556ad46ca1292c2f055ed330cbf644a0cfa587ec95e3.png": {
+      "sha256": "bc068c396f0b344e7bb9556ad46ca1292c2f055ed330cbf644a0cfa587ec95e3",
+      "sizeBytes": 143197
+    },
+    "media/be917c5765fcf2005c092e3bdc6440889faa7d8ca55114495710adbc8c6aeab8.png": {
+      "sha256": "be917c5765fcf2005c092e3bdc6440889faa7d8ca55114495710adbc8c6aeab8",
+      "sizeBytes": 227829
+    },
+    "media/c2eadc037e6f9c4a9bc5b2075b6bf1cf1d4ba712f2d55c6265d4633770f68ba1.png": {
+      "sha256": "c2eadc037e6f9c4a9bc5b2075b6bf1cf1d4ba712f2d55c6265d4633770f68ba1",
+      "sizeBytes": 189653
+    },
+    "media/cbd8d9ced47f30b9aceea0ea294954d3406b6a9808b69a5ef5fb247c3deecd35.png": {
+      "sha256": "cbd8d9ced47f30b9aceea0ea294954d3406b6a9808b69a5ef5fb247c3deecd35",
+      "sizeBytes": 7577
+    },
+    "media/cc094a71bd8b996c36e634334aa11938ef599b1e532c12f82f63ae93e76f676d.png": {
+      "sha256": "cc094a71bd8b996c36e634334aa11938ef599b1e532c12f82f63ae93e76f676d",
+      "sizeBytes": 131791
+    },
+    "media/d201e95e6d158fa39f3345dee6a7d22872db44344770b7677c5eb33d2caea43a.png": {
+      "sha256": "d201e95e6d158fa39f3345dee6a7d22872db44344770b7677c5eb33d2caea43a",
+      "sizeBytes": 183923
+    },
+    "media/d833922e8a6d853795c3e3f83562a6a62c6a3719ce66a7a1fd623ebc0162db6c.png": {
+      "sha256": "d833922e8a6d853795c3e3f83562a6a62c6a3719ce66a7a1fd623ebc0162db6c",
+      "sizeBytes": 132193
+    },
+    "media/e392af44d17585e38fdb18bd687ae512082b50d13ce040478d7dad8e7936af62.png": {
+      "sha256": "e392af44d17585e38fdb18bd687ae512082b50d13ce040478d7dad8e7936af62",
+      "sizeBytes": 4640
+    },
+    "media/e6650846a36aa28d1429cc1d0ee9a31c75e9656616630132ceb34e1d14f0707c.png": {
+      "sha256": "e6650846a36aa28d1429cc1d0ee9a31c75e9656616630132ceb34e1d14f0707c",
+      "sizeBytes": 17844
+    },
+    "media/f8e658e62bd0b0e302b33cd5cd849c60c47fca97d8535a6f01596d5b4c8c53dc.png": {
+      "sha256": "f8e658e62bd0b0e302b33cd5cd849c60c47fca97d8535a6f01596d5b4c8c53dc",
+      "sizeBytes": 9679
+    }
   },
   "decks": [
     {
@@ -90,7 +235,10 @@
           "reason": "missing-topic"
         }
       ],
-      "mediaCount": 23
+      "mediaCount": 23,
+      "mindMapDocumentCount": 55,
+      "mindMapNodeCount": 5454,
+      "navigableNodeCount": 121
     },
     "anki": {
       "rawRowCount": 202,
