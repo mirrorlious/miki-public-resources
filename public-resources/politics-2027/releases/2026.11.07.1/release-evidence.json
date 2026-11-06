@@ -1,0 +1,244 @@
+{
+  "manifest": {
+    "immutable": true,
+    "inputVersion": "2026.08.22.1",
+    "inputBundleSha256": "12f1bd6a1bec9ac7625db6b4ff7ad14f28d867e83d7dd26cf76bda0e5da7c7ae",
+    "bundleSha256": "b2f0d39c5d8f8fd0c09a82e09483200739d44e47b1de9914cc6229d89ab1f0e3",
+    "bundleSizeBytes": 596144,
+    "cardPayloadSha256": "b276b0a5c9b7610514ea25211ce611f48f9f637595f42e34e1ecf98bbf413afa",
+    "stylesheetSha256": "dcbe21926c4c03aeeb33dc60be7e6183287c8813fd0bacd5ed37df6f79ba26ea",
+    "sourceCommit": "c1d196aa649682348481087f0577eda9c346d37d",
+    "referenceCardCount": 16,
+    "newSplitCardCount": 7,
+    "newChoiceCardCount": 53,
+    "choiceReviewHoldCount": 6
+  },
+  "packId": "politics-2027",
+  "version": "2026.11.07.1",
+  "sourceRepository": "https://github.com/XColorful/Politics-Obsidian-Note",
+  "sourceCommit": "c1d196aa649682348481087f0577eda9c346d37d",
+  "license": "CC BY-SA 4.0",
+  "rollbackManifest": "../2026.08.22.1/manifest.json",
+  "splitMappings": [
+    {
+      "oldCardId": "public-politics-30d23ba51d2be4d8-s01",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E9%A9%AC%E5%8E%9F/b%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/2%20%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/%E8%80%83%E7%82%B917%20%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95%E4%B8%A4%E5%A4%A7%E6%80%BB%E7%89%B9%E5%BE%81.md",
+      "units": [
+        "public-politics-30d23ba51d2be4d8-s02",
+        "public-politics-30d23ba51d2be4d8-s03"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-f2bae933ffeed4b3-s01",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E9%A9%AC%E5%8E%9F/b%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/2%20%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/%E8%80%83%E7%82%B920%20%E5%90%A6%E5%AE%9A%E4%B9%8B%E5%90%A6%E5%AE%9A%E8%A7%84%E5%BE%8B%28%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95%E7%AC%AC%E4%B8%89%E8%A7%84%E5%BE%8B%29.md",
+      "units": [
+        "public-politics-f2bae933ffeed4b3-s02",
+        "public-politics-f2bae933ffeed4b3-s03",
+        "public-politics-f2bae933ffeed4b3-s04"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-da142f5ddbf42855-s01",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E9%A9%AC%E5%8E%9F/b%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/3%20%E8%AE%A4%E8%AF%86%E8%AE%BA/%E8%80%83%E7%82%B937%20%E7%9C%9F%E7%90%86%E5%8F%8A%E5%85%B6%E7%89%B9%E6%80%A7.md",
+      "units": [
+        "public-politics-da142f5ddbf42855-s02",
+        "public-politics-da142f5ddbf42855-s03",
+        "public-politics-da142f5ddbf42855-s04",
+        "public-politics-da142f5ddbf42855-s05",
+        "public-politics-da142f5ddbf42855-s06"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-9e13f4c748ffe189-s01",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E9%A9%AC%E5%8E%9F/c%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E6%94%BF%E6%B2%BB%E7%BB%8F%E6%B5%8E%E5%AD%A6/5%20%E8%B5%84%E6%9C%AC%E4%B8%BB%E4%B9%89%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%8F%8A%E8%A7%84%E5%BE%8B/%E8%80%83%E7%82%B968%20%E8%B5%84%E6%9C%AC%E7%A7%AF%E7%B4%AF.md",
+      "units": [
+        "public-politics-9e13f4c748ffe189-s02",
+        "public-politics-9e13f4c748ffe189-s03",
+        "public-politics-9e13f4c748ffe189-s04",
+        "public-politics-9e13f4c748ffe189-s05",
+        "public-politics-9e13f4c748ffe189-s06"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-6f1267832d315e7b-s03",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E9%A9%AC%E5%8E%9F/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86.md",
+      "units": [
+        "public-politics-6f1267832d315e7b-s04",
+        "public-politics-6f1267832d315e7b-s05",
+        "public-politics-6f1267832d315e7b-s06",
+        "public-politics-6f1267832d315e7b-s07"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-5f2e9610cb7a2196-s01",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E5%8F%B2%E7%BA%B2/b%20%E6%96%B0%E6%B0%91%E4%B8%BB%E4%B8%BB%E4%B9%89%E9%9D%A9%E5%91%BD%E6%97%B6%E6%9C%9F/4%20%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E6%88%90%E7%AB%8B%E5%92%8C%E4%B8%AD%E5%9B%BD%E9%9D%A9%E5%91%BD%E6%96%B0%E5%B1%80%E9%9D%A2/%E8%80%83%E7%82%B936%20%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E7%9A%84%E6%88%90%E7%AB%8B%E5%8F%8A%E5%85%B6%E6%84%8F%E4%B9%89.md",
+      "units": [
+        "public-politics-5f2e9610cb7a2196-s02",
+        "public-politics-5f2e9610cb7a2196-s03",
+        "public-politics-5f2e9610cb7a2196-s04",
+        "public-politics-5f2e9610cb7a2196-s05"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-4648841f87bcb936-s01",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E5%8F%B2%E7%BA%B2/b%20%E6%96%B0%E6%B0%91%E4%B8%BB%E4%B8%BB%E4%B9%89%E9%9D%A9%E5%91%BD%E6%97%B6%E6%9C%9F/5%20%E4%B8%AD%E5%9B%BD%E9%9D%A9%E5%91%BD%E7%9A%84%E6%96%B0%E9%81%93%E8%B7%AF/%E8%80%83%E7%82%B942%20%E5%9C%9F%E5%9C%B0%E9%9D%A9%E5%91%BD%E6%88%98%E4%BA%89%E7%9A%84%E5%85%B4%E8%B5%B7.md",
+      "units": [
+        "public-politics-4648841f87bcb936-s01-split-e2bb8313bfbb",
+        "public-politics-4648841f87bcb936-s01-split-0f2fa08ae7d0",
+        "public-politics-4648841f87bcb936-s01-split-82ed4f1d1a64"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-2c9f6f3ae1b136b8-s05",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E5%8F%B2%E7%BA%B2/%E4%B8%AD%E5%9B%BD%E8%BF%91%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81.md",
+      "units": [
+        "public-politics-2c9f6f3ae1b136b8-s06",
+        "public-politics-2c9f6f3ae1b136b8-s07",
+        "public-politics-2c9f6f3ae1b136b8-s08",
+        "public-politics-2c9f6f3ae1b136b8-s09"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-2c9f6f3ae1b136b8-s10",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E5%8F%B2%E7%BA%B2/%E4%B8%AD%E5%9B%BD%E8%BF%91%E4%BB%A3%E5%8F%B2%E7%BA%B2%E8%A6%81.md",
+      "units": [
+        "public-politics-2c9f6f3ae1b136b8-s11",
+        "public-politics-2c9f6f3ae1b136b8-s12",
+        "public-politics-2c9f6f3ae1b136b8-s13"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-ccb341b9ca0ef267-s01",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E6%AF%9B%E4%B8%AD%E7%89%B9/b%20%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3/2%20%E6%96%B0%E6%B0%91%E4%B8%BB%E4%B8%BB%E4%B9%89%E9%9D%A9%E5%91%BD%E7%90%86%E8%AE%BA/%E8%80%83%E7%82%B912%20%E6%96%B0%E6%B0%91%E4%B8%BB%E4%B8%BB%E4%B9%89%E9%9D%A9%E5%91%BD%E7%9A%84%E9%81%93%E8%B7%AF.md",
+      "units": [
+        "public-politics-ccb341b9ca0ef267-s02",
+        "public-politics-ccb341b9ca0ef267-s03",
+        "public-politics-ccb341b9ca0ef267-s04"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-d69e5bae728e61c9-s01",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E6%AF%9B%E4%B8%AD%E7%89%B9/b%20%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3/2%20%E6%96%B0%E6%B0%91%E4%B8%BB%E4%B8%BB%E4%B9%89%E9%9D%A9%E5%91%BD%E7%90%86%E8%AE%BA/%E8%80%83%E7%82%B913%20%E6%96%B0%E6%B0%91%E4%B8%BB%E4%B8%BB%E4%B9%89%E9%9D%A9%E5%91%BD%E7%9A%84%E4%B8%89%E5%A4%A7%E6%B3%95%E5%AE%9D.md",
+      "units": [
+        "public-politics-d69e5bae728e61c9-s02",
+        "public-politics-d69e5bae728e61c9-s03",
+        "public-politics-d69e5bae728e61c9-s04"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-c67934850365fa1f-s02",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E6%96%B0%E6%80%9D%E6%83%B3/%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%96%B0%E6%97%B6%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E6%80%9D%E6%83%B3%E6%A6%82%E8%AE%BA.md",
+      "units": [
+        "public-politics-c67934850365fa1f-s03",
+        "public-politics-c67934850365fa1f-s04",
+        "public-politics-c67934850365fa1f-s05",
+        "public-politics-c67934850365fa1f-s06",
+        "public-politics-c67934850365fa1f-s07"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-c67934850365fa1f-s08",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E6%96%B0%E6%80%9D%E6%83%B3/%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%96%B0%E6%97%B6%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E6%80%9D%E6%83%B3%E6%A6%82%E8%AE%BA.md",
+      "units": [
+        "public-politics-c67934850365fa1f-s09",
+        "public-politics-c67934850365fa1f-s10",
+        "public-politics-c67934850365fa1f-s11",
+        "public-politics-c67934850365fa1f-s12",
+        "public-politics-c67934850365fa1f-s13",
+        "public-politics-c67934850365fa1f-s14",
+        "public-politics-c67934850365fa1f-s15"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-c67934850365fa1f-s16",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E6%96%B0%E6%80%9D%E6%83%B3/%E4%B9%A0%E8%BF%91%E5%B9%B3%E6%96%B0%E6%97%B6%E4%BB%A3%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E6%80%9D%E6%83%B3%E6%A6%82%E8%AE%BA.md",
+      "units": [
+        "public-politics-c67934850365fa1f-s17",
+        "public-politics-c67934850365fa1f-s18",
+        "public-politics-c67934850365fa1f-s19",
+        "public-politics-c67934850365fa1f-s20",
+        "public-politics-c67934850365fa1f-s21"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-5202111cabea25a1-overview",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E6%80%9D%E4%BF%AE/b%20%E6%80%9D%E6%83%B3%E7%AF%87/3%20%E7%BB%A7%E6%89%BF%E4%BC%98%E8%89%AF%E4%BC%A0%E7%BB%9F%20%E5%BC%98%E6%89%AC%E4%B8%AD%E5%9B%BD%E7%B2%BE%E7%A5%9E/%E8%80%83%E7%82%B925%20%E4%B8%AD%E5%9B%BD%E7%B2%BE%E7%A5%9E%E7%9A%84%E4%B8%B0%E5%AF%8C%E5%86%85%E6%B6%B5.md",
+      "units": [
+        "public-politics-5202111cabea25a1-overview-split-b08e7a4f67d4",
+        "public-politics-5202111cabea25a1-overview-split-2dd7d76877e2",
+        "public-politics-5202111cabea25a1-overview-split-d75466b28247",
+        "public-politics-5202111cabea25a1-overview-split-3446cc981f23"
+      ]
+    },
+    {
+      "oldCardId": "public-politics-182a7d932ec6dcb2-s01",
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E6%80%9D%E4%BF%AE/d%20%E6%B3%95%E5%88%B6%E7%AF%87/6%20%E5%AD%A6%E4%B9%A0%E6%B3%95%E6%B2%BB%E6%80%9D%E6%83%B3%20%E6%8F%90%E5%8D%87%E6%B3%95%E5%88%B6%E7%B4%A0%E5%85%BB/%E8%80%83%E7%82%B955%20%E5%85%A8%E9%9D%A2%E4%BE%9D%E6%B3%95%E6%B2%BB%E5%9B%BD%E7%9A%84%E6%A0%B9%E6%9C%AC%E9%81%B5%E5%BE%AA.md",
+      "units": [
+        "public-politics-182a7d932ec6dcb2-s02",
+        "public-politics-182a7d932ec6dcb2-s03",
+        "public-politics-182a7d932ec6dcb2-s04"
+      ]
+    }
+  ],
+  "heldChoiceSourceLines": [
+    {
+      "sourcePath": "史纲/a 旧民主主义革命时期/1 进入近代后中华民族的磨难与抗争/考点12 列强瓜分中国图谋的破产.md",
+      "line": 29,
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E5%8F%B2%E7%BA%B2/a%20%E6%97%A7%E6%B0%91%E4%B8%BB%E4%B8%BB%E4%B9%89%E9%9D%A9%E5%91%BD%E6%97%B6%E6%9C%9F/1%20%E8%BF%9B%E5%85%A5%E8%BF%91%E4%BB%A3%E5%90%8E%E4%B8%AD%E5%8D%8E%E6%B0%91%E6%97%8F%E7%9A%84%E7%A3%A8%E9%9A%BE%E4%B8%8E%E6%8A%97%E4%BA%89/%E8%80%83%E7%82%B912%20%E5%88%97%E5%BC%BA%E7%93%9C%E5%88%86%E4%B8%AD%E5%9B%BD%E5%9B%BE%E8%B0%8B%E7%9A%84%E7%A0%B4%E4%BA%A7.md#L29",
+      "reason": "答案标签与选项批注冲突",
+      "answerKey": "A",
+      "conflictingOptions": [
+        "B"
+      ]
+    },
+    {
+      "sourcePath": "史纲/b 新民主主义革命时期/4 中国共产党成立和中国革命新局面/考点33 新民主主义革命.md",
+      "line": 27,
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E5%8F%B2%E7%BA%B2/b%20%E6%96%B0%E6%B0%91%E4%B8%BB%E4%B8%BB%E4%B9%89%E9%9D%A9%E5%91%BD%E6%97%B6%E6%9C%9F/4%20%E4%B8%AD%E5%9B%BD%E5%85%B1%E4%BA%A7%E5%85%9A%E6%88%90%E7%AB%8B%E5%92%8C%E4%B8%AD%E5%9B%BD%E9%9D%A9%E5%91%BD%E6%96%B0%E5%B1%80%E9%9D%A2/%E8%80%83%E7%82%B933%20%E6%96%B0%E6%B0%91%E4%B8%BB%E4%B8%BB%E4%B9%89%E9%9D%A9%E5%91%BD.md#L27",
+      "reason": "答案标签与选项批注冲突",
+      "answerKey": "D",
+      "conflictingOptions": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "sourcePath": "思修/d 法制篇/6 学习法治思想 提升法制素养/考点55 全面依法治国的根本遵循.md",
+      "line": 70,
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E6%80%9D%E4%BF%AE/d%20%E6%B3%95%E5%88%B6%E7%AF%87/6%20%E5%AD%A6%E4%B9%A0%E6%B3%95%E6%B2%BB%E6%80%9D%E6%83%B3%20%E6%8F%90%E5%8D%87%E6%B3%95%E5%88%B6%E7%B4%A0%E5%85%BB/%E8%80%83%E7%82%B955%20%E5%85%A8%E9%9D%A2%E4%BE%9D%E6%B3%95%E6%B2%BB%E5%9B%BD%E7%9A%84%E6%A0%B9%E6%9C%AC%E9%81%B5%E5%BE%AA.md#L70",
+      "reason": "答案标签与选项批注冲突",
+      "answerKey": "ABC",
+      "conflictingOptions": [
+        "D"
+      ]
+    },
+    {
+      "sourcePath": "新思想/b 基本问题/1 新时代坚持和发展中国特色社会主义/考点10 社会主要矛盾变化是关系全局的历史性变化.md",
+      "line": 19,
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E6%96%B0%E6%80%9D%E6%83%B3/b%20%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/1%20%E6%96%B0%E6%97%B6%E4%BB%A3%E5%9D%9A%E6%8C%81%E5%92%8C%E5%8F%91%E5%B1%95%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89/%E8%80%83%E7%82%B910%20%E7%A4%BE%E4%BC%9A%E4%B8%BB%E8%A6%81%E7%9F%9B%E7%9B%BE%E5%8F%98%E5%8C%96%E6%98%AF%E5%85%B3%E7%B3%BB%E5%85%A8%E5%B1%80%E7%9A%84%E5%8E%86%E5%8F%B2%E6%80%A7%E5%8F%98%E5%8C%96.md#L19",
+      "reason": "答案标签与选项批注冲突",
+      "answerKey": "ACD",
+      "conflictingOptions": [
+        "B"
+      ]
+    },
+    {
+      "sourcePath": "马原/b 马克思主义哲学/1 辩证唯物论/考点14 主观能动性和客观规律性的辩证统一.md",
+      "line": 20,
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E9%A9%AC%E5%8E%9F/b%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/1%20%E8%BE%A9%E8%AF%81%E5%94%AF%E7%89%A9%E8%AE%BA/%E8%80%83%E7%82%B914%20%E4%B8%BB%E8%A7%82%E8%83%BD%E5%8A%A8%E6%80%A7%E5%92%8C%E5%AE%A2%E8%A7%82%E8%A7%84%E5%BE%8B%E6%80%A7%E7%9A%84%E8%BE%A9%E8%AF%81%E7%BB%9F%E4%B8%80.md#L20",
+      "reason": "答案标签与选项批注冲突",
+      "answerKey": "BCD",
+      "conflictingOptions": [
+        "A"
+      ]
+    },
+    {
+      "sourcePath": "马原/b 马克思主义哲学/3 认识论/考点29 实践的本质和基本特征.md",
+      "line": 33,
+      "sourceUrl": "https://github.com/XColorful/Politics-Obsidian-Note/blob/c1d196aa649682348481087f0577eda9c346d37d/%E9%A9%AC%E5%8E%9F/b%20%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89%E5%93%B2%E5%AD%A6/3%20%E8%AE%A4%E8%AF%86%E8%AE%BA/%E8%80%83%E7%82%B929%20%E5%AE%9E%E8%B7%B5%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81.md#L33",
+      "reason": "题干、选项或答案结构不完整",
+      "answerKey": "D"
+    }
+  ]
+}
